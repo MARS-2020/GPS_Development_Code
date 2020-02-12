@@ -285,7 +285,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 			i++; //increase element counter
 		}
 
-		if(fix[0] == 0) //no fix
+		if((fix[0] == 0) || (commaCnt != 14)) //no fix
 		{
 			HAL_UART_Receive_IT(&hlpuart1, data, sizeof(data)); //receive another message
 		}
